@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <form id="signup" name="signup" method="post" action="/signup">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" class="form-control" placeholder="John">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" class="form-control" placeholder="Doe">
+                </div>
+                <div class="form-group">
+                    <label for="fighter_name">Fighter Name</label>
+                    <input type="text" id="fighter_name" name="fighter_name" class="form-control" placeholder="Big Bad Joe">
+                </div>
+                <div class="form-group">
+                    <label for="fighter_gender">Gender</label>
+                    <select class="form-control" id="fighter_gender" name="fighter_gender">
+                        <option value="" disabled selected>-- Choose Your Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fighter_image">Fight Image</label>
+                    <input type="text" id="fighter_image" name="fighter_image" class="form-control" placeholder="https://www.fihtimage.png">
+                </div>
+                 <div class="form-group">
+                    <label for="about">About Me</label>
+                    <textarea type="text" id="about" name="about" class="form-control" placeholder="People fear my rath"></textarea> 
+                </div>
+                 <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="jd.theKiller@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="********">
+                </div>
+                <button type="submit" class="btn btn-primary">Become a Fighter</button><a href="/signin">already a member? Sign In</a>
+            </form>
+        </div>
+    </div>
+</div>

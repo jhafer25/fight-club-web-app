@@ -1,0 +1,48 @@
+<!-- <div class="container">
+  <div class="row justify-content-center mx-auto mt-4">
+    <div class="col-md">
+      <h1>Welcome to this site.</h1>
+      <p>Please begin by signing in.</p>
+      <a class="btn btn-primary" href="/home" role="button">Sign In</a>
+    </div>
+  </div>
+</div>
+</div> -->
+<div class="jumbotron">
+	<div class="row text-center">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h2>Prepare To Fight</h2>
+		</div>
+	</div>
+	<div class="marketing form text-center">
+		<div class="row text-center">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+				<a class="btn btn-primary" href="/home" role="button">Sign In</a>
+	      		<a href="/signup" role="button" class="btn btn-primary">Become a Fighter</a>
+	    	</div>
+	  	</div>
+	</div>
+	
+</div>
+<div class="container">
+	<h1 class="text-center">Current Potential Fighters</h1>
+	<div class="row text-center">
+		<div class="slider">
+			<!-- <img class="rounded mx-auto d-block" src="https://media.contentapi.ea.com/content/dam/ufc/common/ratings/2018/light-heavyweights/belfort.png.adapt.crop16x9.png"/>
+    		<img class="rounded mx-auto d-block" src="https://media.contentapi.ea.com/content/dam/ufc/common/ratings/2018/light-heavyweights/belfort.png.adapt.crop16x9.png"/>
+    		<img class="rounded mx-auto d-block" src="https://media.contentapi.ea.com/content/dam/ufc/common/ratings/2018/light-heavyweights/belfort.png.adapt.crop16x9.png"/>
+    		<img class="rounded mx-auto d-block" src="https://media.contentapi.ea.com/content/dam/ufc/common/ratings/2018/light-heavyweights/belfort.png.adapt.crop16x9.png"/>
+    		<img class="rounded mx-auto d-block" src="https://media.contentapi.ea.com/content/dam/ufc/common/ratings/2018/light-heavyweights/belfort.png.adapt.crop16x9.png"/> -->
+    		{{#each users}}
+          	<img class="rounded mx-auto d-block" src="{{this.fighter_image}}"/>
+        
+        	{{/each}}
+	    </div>
+
+      	
+	</div>
+</div>
+
+
+
