@@ -18,6 +18,7 @@
     "username": "sl0i1nno875z1dx3",
     "password": "lyeh8sgqdhzk70db",
     "database": "fight_club_heroku_db",
+    "port": 3306,
     "host": "qbct6vwi8q648mrn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
