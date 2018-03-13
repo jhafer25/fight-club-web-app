@@ -7,9 +7,7 @@ const bodyParser = require('body-parser');
 const env = require('dotenv').load();
 const exphbs = require('express-handlebars');
 const router  = express.Router();
-const http    = require('http');
-
-app.set('port', process.env.PORT || 3000);
+const http = require('http').Server(app);
 // BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -49,18 +47,15 @@ const authRoute = require('./controllers/auth.js')(app, passport, models.user, e
 // Load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
 
-if ('development' === app.get('env')) {
-  app.use(express.errorHandler());
-}
-
 // Sync Database
 models.sequelize
   .sync()
   .then(function() {
     console.log('Database Connected');
-    http.createServer(app).listen(app.get('port'), function(){
-      console.log('Express server listening on port ' + app.get('port'));
+    http.listen(process.env.PORT || 3000, function(){
+      console.log('listening on', http.address().port);
     });
+
     // app.listen(3000, function(err) {
     //   if (!err) console.log('Connected at http://localhost:3000');
     //   else console.log(err);
