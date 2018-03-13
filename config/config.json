@@ -15,6 +15,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "DATABASE_URL"
+    "username": "root",
+    "password": null,
+    "database": "fight_club_heroku_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
