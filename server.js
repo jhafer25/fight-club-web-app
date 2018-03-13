@@ -8,7 +8,6 @@ const env = require('dotenv').load();
 const exphbs = require('express-handlebars');
 const router  = express.Router();
 const http = require('http').Server(app);
-const io = require('socket.io')(http);
 // BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -47,31 +46,6 @@ const authRoute = require('./controllers/auth.js')(app, passport, models.user, e
 
 // Load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
-
-io.on('connection', function(socket){
-    console.log('user connected!');
-
-    socket.on('join', function(name){
-        user[socket.id] = name; //create entry in 'user' with new user
-        socket.emit("update", "You have connected to the server.");
-        io.sockets.emit("update", name + " has joined the server.");
-        io.sockets.emit("update_people_list", user);
-    });
-
-    socket.on('disconnect', function(){
-        console.log('user disconnected!');
-        if(user[socket.id] != ""){
-            io.sockets.emit("update", user[socket.id] + " has left the server.");
-            delete user[socket.id];
-            io.sockets.emit("update_people_list", user);
-        }
-    });
-
-    socket.on('chat message', function(msg){
-        console.log('message: ' + msg);
-        io.sockets.emit('chat message', user[socket.id], msg);
-    });
-});
 
 // Sync Database
 models.sequelize
